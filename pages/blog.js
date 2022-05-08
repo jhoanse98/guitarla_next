@@ -1,13 +1,34 @@
 import Layout from '../components/Layout'
 
-const Blog = () => {
+const Blog = ({entradas}) => {
+
+    console.log(entradas) // ahora si será visible la consulta de la api en el lado del cliente
     return ( 
-    <Layout
-        pagina="Blog"
-    >
-        <h1>Desde Blog</h1>
-    </Layout>
-);
+        <Layout
+            pagina="Blog"
+        >
+            <h1>Desde Blog</h1>
+        </Layout>
+    );
+}
+
+//creamos la función getServerSideProps para consultar la api en strapi
+
+export async function getServerSideProps(){
+
+    const url = "http://localhost:1337/blogs"
+    const respuesta = await fetch(url)
+    const entradas = await respuesta.json()
+
+    console.log(entradas) //se ve desde el servidor y no en el lado del cliente
+
+    //getServerSideProps siempre retorna un objeto con atributo props
+
+    return {
+        props: {
+            entradas //este resultado "entradas ahora puede ser accesible en el componente Blog"
+        }
+    }
 }
  
 export default Blog;
