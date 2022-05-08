@@ -1,3 +1,4 @@
+import Entrada from '../components/Entrada';
 import Layout from '../components/Layout'
 
 const Blog = ({entradas}) => {
@@ -7,7 +8,17 @@ const Blog = ({entradas}) => {
         <Layout
             pagina="Blog"
         >
-            <h1>Desde Blog</h1>
+            <main className='contenedor'>
+                <h2 className='heading'>Blog</h2>
+                <div>
+                    {entradas.map(entrada => (
+                        <Entrada
+                            key={entrada.id}
+                            entrada={entrada}
+                        />
+                    ))}
+                </div>
+            </main>
         </Layout>
     );
 }
