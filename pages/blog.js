@@ -1,5 +1,6 @@
 import Entrada from '../components/Entrada';
 import Layout from '../components/Layout'
+import ListadoBlog from '../components/ListadoBlog';
 import styles from '../styles/Blog.module.css'
 
 const Blog = ({entradas}) => {
@@ -10,15 +11,9 @@ const Blog = ({entradas}) => {
             pagina="Blog"
         >
             <main className='contenedor'>
-                <h2 className='heading'>Blog</h2>
-                <div className={styles.blog}>
-                    {entradas.map(entrada => (
-                        <Entrada
-                            key={entrada.id}
-                            entrada={entrada}
-                        />
-                    ))}
-                </div>
+                <ListadoBlog
+                    entradas={entradas}
+                />
             </main>
         </Layout>
     );

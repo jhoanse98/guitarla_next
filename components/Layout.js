@@ -2,7 +2,7 @@ import Head from 'next/head'
 import Header from './Header';
 import Footer from './Footer';
 
-const Layout = ({children, pagina}) => {
+const Layout = ({children, pagina, guitarra}) => {
     return ( 
 
         <div>
@@ -10,13 +10,19 @@ const Layout = ({children, pagina}) => {
                 <title>GuitarLA - {pagina}</title>
             </Head>
 
-            <Header />
+            <Header 
+                guitarra={guitarra}
+            />
 
             {children}
 
             <Footer />
         </div>
      );
+}
+
+Layout.defaultProps = {
+    guitarra: null
 }
  
 export default Layout;
