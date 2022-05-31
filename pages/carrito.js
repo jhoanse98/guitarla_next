@@ -1,15 +1,13 @@
 import { useState, useEffect } from "react";
 import Layout from "../components/Layout";
 
-import Image from 'next/Image'
+import Image from 'next/image'
 import styles from '../styles/Carrito.module.css'
 
 
 const Carrito = ({carrito, actualizarCantidad, eliminarProducto}) => {
 
-    /*
-    Carrito viene como un state general desde _app.js y es accesible por todas las pages
-    */
+    
 
     const[total, setTotal] = useState(0)
 
