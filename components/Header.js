@@ -6,7 +6,6 @@ import styles from '../styles/Header.module.css'
 const Header = ({guitarra}) => {
 
     const router = useRouter();
-    console.log(router)
     return (
 
         <header className={styles.header}>
@@ -23,6 +22,11 @@ const Header = ({guitarra}) => {
                         <Link href="/nosotros">Nosotros</Link>
                         <Link href="/blog">Blog</Link>
                         <Link href="/tienda">Tienda</Link>
+                        <Link href="/carrito">
+                            <a>
+                                <Image layout='fixed' width={30} height={25} src="/img/carrito.png" alt='Imagen Carrito' />
+                            </a>
+                        </Link>
                     </nav>
                 </div>
 
