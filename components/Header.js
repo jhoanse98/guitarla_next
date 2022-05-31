@@ -45,7 +45,9 @@ const Header = ({guitarra}) => {
             </div>
 
             {router.pathname === '/' && (
-                <img className={styles.guitarra} src='/img/header_guitarra.png' alt="imagen header guitarra"/>
+                <div className={styles.guitarra}>
+                    <Image layout='fixed' width={500} height={1200} src='/img/header_guitarra.png' alt="imagen header guitarra"/>
+                </div>
             )}
         </header>
     );
